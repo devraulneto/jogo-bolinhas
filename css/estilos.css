@@ -110,6 +110,10 @@
     background-color: red;
 }
 
+.bola:hover{
+    cursor: pointer;
+}
+
 .final{
     font-weight: bold;
     color: red;
