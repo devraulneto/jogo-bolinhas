@@ -1,5 +1,6 @@
 var timerJogo;
 var timerContador;
+var bola;
 var tempo = parseInt(document.querySelector(".tempo-jogo p").innerHTML);
 var tempoRestante = document.querySelector(".tempo-jogo p");
 var elPonto = document.querySelector(".pontuacao p");
@@ -23,7 +24,7 @@ btnRecomecar.addEventListener('click', function () {
 });
 
 function adicionaBola() {
-    var bola = document.createElement('div');
+    bola = document.createElement('div');
     bola.setAttribute('class', 'bola');
 
     var posx = Math.floor(Math.random() * 700);
@@ -51,6 +52,10 @@ function iniciarJogo() {
 }
 
 function pararJogo() {
+    var bolas = area.children;
+    for (let i = 0; i < bolas.length; i++){
+        bolas[i].removeAttribute("onclick");
+    }
     clearInterval(timerJogo);
 }
 
