@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 0 2%;
+}
+
+.container h1{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container h2{
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.area-botoes{
+    display: flex;
+    justify-content: center;
+}
+
+.area-botoes .botoes{
+    margin-right: 10px;
+}
+
+.area-botoes .botoes button{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.area-botoes .botoes button:hover{
+    cursor: pointer;
+}
+
+#start{
+    background-color: #28a745;
+    border: 1px solid #28a745;
+    color: white;
+}
+
+#stop{
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+    color: white;
+}
+
+#restart{
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    color: white;
+}
+
+.area-tempo-pontuacao{
+    display: flex;
+    margin-left: 20px;
+}
+
+.tempo-jogo, .pontuacao{
+    display: flex;
+}
+
+.tempo-jogo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.tempo-jogo i, .pontuacao i{
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.pontuacao{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.area-jogo{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(241,241,241,1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(241,241,241,1);
+    box-shadow: 5px 5px 5px 0px rgba(241,241,241,1);
+}
+
+.bola{
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.final{
+    font-weight: bold;
+    color: red;
+}
+
+@media only screen and (max-width: 500px){
+    .area-botoes{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .area-tempo-pontuacao{
+        margin-top: 30px;
+        margin-left: 0;
+    }    
+}

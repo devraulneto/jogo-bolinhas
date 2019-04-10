@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo das bolinhas</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo das Bolinhas</h1>
+        <h2>Quantas bolinhas você acha que consegue acertar em 1 minuto? Clique em começar e teste sua velocidade!</h2>
+        <div class="area-botoes">
+            <div class="botoes">
+                <button id="start">Iniciar</button>
+                <button id="stop">Parar</button>
+                <button id="restart">Recomeçar</button>
+            </div>
+            <div class="area-tempo-pontuacao">
+                <div class="tempo-jogo">
+                    <i class="far fa-clock"></i>
+                    <p id="tempo-restante">60</p>
+                </div>
+                <div class="pontuacao">
+                    <i class="fas fa-bullseye"></i>
+                    <p>0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="area-jogo">
+        </div>
+    </div>   
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
