@@ -1,5 +1,6 @@
 var timerJogo;
 var timerContador;
+var timerBola;
 var bola;
 var tempo = parseInt(document.querySelector(".tempo-jogo p").innerHTML);
 var tempoRestante = document.querySelector(".tempo-jogo p");
@@ -33,8 +34,14 @@ function adicionaBola() {
     bola.setAttribute("style", "top:" + posy + "px;left:" + posx + "px;background-color:" + geraCorAleatoria() + ";");
     bola.setAttribute("onclick", "estourarBola(this)");
     
+    area.appendChild(bola);   
+    removerBola(bola);
+}
 
-    area.appendChild(bola);
+function removerBola(bola){
+    timerBola = setTimeout(function(){
+        area.removeChild(bola);
+    }, 1000);
 }
 
 function geraCorAleatoria() {
@@ -57,10 +64,11 @@ function pararJogo() {
         bolas[i].removeAttribute("onclick");
     }
     clearInterval(timerJogo);
+    clearTimeout(timerBola);
 }
 
-function estourarBola(elemento) {
-    area.removeChild(elemento);
+function estourarBola(bola) {
+    area.removeChild(bola);
     adicionarPonto();
 }
 
@@ -72,15 +80,27 @@ function countDown() {
     if (tempo >= 0) {
         if (tempo == 40) {
             clearInterval(timerJogo);
+            clearTimeout(timerBola);
             timerJogo = setInterval(adicionaBola, 800);
+            timerBola = setTimeout(removerBola(bola), 800);
+        }
+        if (tempo == 30) {
+            clearInterval(timerJogo);
+            clearTimeout(timerBola);
+            timerJogo = setInterval(adicionaBola, 700);
+            timerBola = setTimeout(removerBola(bola), 700);
         }
         if (tempo == 20) {
             clearInterval(timerJogo);
-            timerJogo = setInterval(adicionaBola, 700);
+            clearTimeout(timerBola);
+            timerJogo = setInterval(adicionaBola, 600);
+            timerBola = setTimeout(removerBola(bola), 600);
         }
         if (tempo == 10) {
             clearInterval(timerJogo);
+            clearTimeout(timerBola);
             timerJogo = setInterval(adicionaBola, 400);
+            timerBola = setTimeout(removerBola(bola), 500);
             tempoRestante.setAttribute('class', 'final');
         }
         timerContador = setTimeout('countDown()', 1000);
